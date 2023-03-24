@@ -1,0 +1,33 @@
+.requestForm{
+    position: relative;
+    top: 100px;
+    width: 500px;
+    background-color: white;
+    margin: 0 auto;
+    text-align: center;
+    height: 500px;
+}
+.requestForm input{
+    width: 400px;
+    font-size: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.066);
+}
+.requestForm div{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+}
+.requestForm select{
+    width: 410px;
+}
+.requestForm button{
+    margin-top: 20px;
+    background-color:#063b5e ;
+    border-radius:25px ;
+    color: white;
+    width: 300px;
+}

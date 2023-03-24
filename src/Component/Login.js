@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
 function Login(props) {
   const [name, setName] = useState("");
@@ -21,7 +22,6 @@ function Login(props) {
         } //we found a data that has the user name
         else {
           //now see if password matches
-          
           if (resp.Password === password) {
             sessionStorage.setItem("username", name);
             if (props.userLevel === "admins") 
@@ -32,7 +32,7 @@ function Login(props) {
               navigate("/staffpanel");
             } else if (props.userLevel === "users") {
               alert("user");
-              navigate("/Form");
+              navigate("/form");
             }
           } else {
             console.log("Login Failed");
@@ -46,20 +46,29 @@ function Login(props) {
 
   return (
     <div className="App">
+    <Navbar/>
+    <div className="form">   
       <h1>{props.userLevel}</h1>
+      <div>
+        <label>Username:</label>
       <input
         type="text"
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Username"
       />
+      </div>
+      <div>
+      <label>Password:</label>
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
+      </div>
       <button onClick={login}>Login</button>
+    </div>
     </div>
   );
 }

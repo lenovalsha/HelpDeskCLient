@@ -1,8 +1,11 @@
 import './App.css';
+import './Component/index.css'
+import './User/index.css'
+
 import {BrowserRouter, Routes, Route, useNavigate} from 'react-router-dom';
 import Login from './Component/Login';
 import Register from './Component/Register';
-import Form from './Component/Form';
+import Form from './User/Form';
 import Navbar from './Component/Navbar';
 // ============================================ADMIN
 import AdminDashboard from './Admin/Dashboard';
@@ -31,7 +34,6 @@ return (
         <Route path='/register' element={<Register userLevel = "users" />}/>
         <Route path='/logins' element={<Navbar/>}/>
         
-        <Route path='/form' element={<Form/>}/>
         {/* ============================================================================= */}
         <Route path='/settings' element={<Settings/>}/>
         <Route path='/adminTickets' element={<AdminTickets/>}/>
@@ -41,7 +43,8 @@ return (
         {/* ============================================================================== */}
         <Route path='/staffpanel' element={<StaffPanel/>}/>
         <Route path='/staffTickets' element={<StaffTicket/>}/>
-
+        {/* ------------------------------------------------------------------------------- */}
+        <Route path='/form' element={<Form/>}/>
         <Route path='/chat' element={<Chat/>}/>
         <Route path='/userTicket' element={<UserTickets/>}/>
       </Routes>

@@ -1,10 +1,11 @@
 import {Link,useNavigate} from 'react-router-dom'
 import {useEffect,useState} from 'react'
+// import './index.css'
 
 function Navbar(){
    
     return(
-        <div>
+        <nav className='logins'>
             <ul>
                 <li><Link to="/loginAdmin">Admin Login</Link></li>
                 <li><Link to="/registerAdmin">Register Admin</Link></li>
@@ -13,7 +14,7 @@ function Navbar(){
                 <li><Link to="/login"> Login</Link></li>
                 <li><Link to="/register">Register </Link></li>
             </ul>
-        </div>
+        </nav>
     )
 }
 export default Navbar;

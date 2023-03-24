@@ -13,6 +13,7 @@ function Tickets() {
   let username = sessionStorage.getItem("username"); //username of staff
 
   useEffect(() => {
+    const interval = setInterval(() => {
     const fetchData = async () => {
       const resp = await fetch(
         `https://localhost:7057/api/tickets/staffname/${username}`
@@ -25,6 +26,8 @@ function Tickets() {
       console.log(newData);
     };
     fetchData();
+  },3000);
+  return()=> clearInterval(interval);
   }, []);
 
   // ===================================================================================
@@ -50,7 +53,7 @@ function Tickets() {
     } catch (error) {
       console.error(error);
     }
-    window.location.reload(true);
+    // window.location.reload(true);
   }
 
   async function GetChat(props)

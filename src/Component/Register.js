@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Navbar from "./Navbar";
+
 
 function Register(props) {
   const [username, setName] = useState("");
@@ -30,27 +32,37 @@ function Register(props) {
 
   }
   return (
-    <div className="col-sm-2 offset-sm-5">
+    <div className="App">
+      <Navbar/>
+      <div className="form">
       <h1>Register {props.userLevel}</h1>
+      <div>
+      <label>Username:</label>
       <input
         type="text"
         value={username}
         className="form-control"
-        placeholder="username"
+        placeholder="Username"
         onChange={(e) => setName(e.target.value)}
       />
+      </div>
+      <div>
+      <label>Password:</label>
+
       <input
         type="password"
         value={password}
         className="form-control"
-        placeholder="password"
+        placeholder="Password"
         onChange={(e) => setPassword(e.target.value)}
       />
+      </div>
       
       <br />
       <button className="btn btn-primary" onClick={SignUp}>
         Register 
       </button>
+      </div>
     </div>
   );
 }

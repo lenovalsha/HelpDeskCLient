@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Navbar from "./Navbar";
 
 import { Link, useNavigate } from "react-router-dom";
 function Form() {
@@ -8,9 +9,6 @@ function Form() {
   const [Title, setTitle] = useState();
   const [Description, setDescription] = useState();
   let username = sessionStorage.getItem("username");
-  const dateString = "2023-03-15T23:59:07.348Z";
-  const date = new Date(dateString);
-  const formattedDate = date.toLocaleDateString();
 
   useEffect(() => {
     //get the priority list data
@@ -29,8 +27,6 @@ function Form() {
   }, []);
 
   async function GenerateTicket() {
-
-
     let result = await fetch("https://localhost:7057/api/tickets/", {
       method: "POST",
       body: JSON.stringify({
@@ -51,15 +47,21 @@ function Form() {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/login">Logout</Link>
-      <h1>Form</h1>
+    <Navbar/>
+      <div className="requestForm">
+      <h1> Request Form</h1>
+      <div>
+      <label>Title</label>
       <input
         type="text"
         placeholder="Title"
         value={Title}
         onChange={(e) => setTitle(e.target.value)}
       />
+
+      </div>
+      <div>
+      <label>Username</label>
       <input
         type="text"
         placeholder="Username"
@@ -67,7 +69,11 @@ function Form() {
         value={username}
       />
 
-      <span>Category</span>
+      </div>
+      <div>
+
+      <label>Category</label>
+
       <select onChange={(e) => setCategory(e.target.value)}>
         {
           //loop through the list and add it as option
@@ -78,13 +84,17 @@ function Form() {
           ))
         }
       </select>
-      <input
+      </div>
+      <div>
+      <textarea rows="4" cols="80"
         value={Description}
         type="text"
         placeholder="Comment"
         onChange={(e) => setDescription(e.target.value)}
       />
+      </div>
       <button onClick={GenerateTicket}>Submit</button>
+      </div>
     </div>
   );
 }

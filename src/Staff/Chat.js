@@ -13,9 +13,7 @@ function Chat({onClose}) {
   const [receiver, setReceiver] = useState('');
   let sender = sessionStorage.getItem("username");
   let ticketId = sessionStorage.getItem("ticketId");
-  const [showChat, setShowChat] = useState(true);
-
-
+const contentRef = useRef(null);
   console.log(ticketId);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -49,6 +47,7 @@ useEffect(() => {
     setReceiver(getTicket.StaffName);
   }
 }, [getTicket, sender]);
+
 
   async function SendChat() {
    
@@ -86,7 +85,7 @@ useEffect(() => {
   return (
     <div className="chat">
    
-    <div className="chat-messages">
+    <div className="chat-messages" ref={contentRef}>
     <button className="close" onClick={onClose}>X</button>
       {Array.isArray(getChat) && getChat.map((x) => (
         <div key={x.Id}>
