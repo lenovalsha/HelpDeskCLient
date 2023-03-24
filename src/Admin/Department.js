@@ -23,8 +23,10 @@ function Department(){
     <section>
 
         <h1>Department</h1>
+        <div className="last-container">
         <input type="text" value={Department} onChange={(e) => setDepartment(e.target.value) } placeholder="Name"/>
         <button onClick={MakeDepartment}>Add Department</button> 
+        </div>
     </section>
     </div>)
 }

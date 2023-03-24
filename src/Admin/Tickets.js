@@ -59,6 +59,7 @@ function Tickets() {
           window.location.reload(true);
 
           }
+        
 
   return (
     <div className="container">

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-function Chat(props) {
+import { useEffect, useState,useRef } from "react";
+function Chat({onClose}) {
 
   // this is for chat history
   const [getChat, setGetChat] = useState([]);
@@ -13,11 +13,12 @@ function Chat(props) {
   const [receiver, setReceiver] = useState('');
   let sender = sessionStorage.getItem("username");
   let ticketId = sessionStorage.getItem("ticketId");
+  const [showChat, setShowChat] = useState(true);
+
 
   console.log(ticketId);
   useEffect(() => {
     const interval = setInterval(() => {
-    //get the ticket list data
     const fetchData = async () => {
       const resp = await fetch(
         `https://localhost:7057/api/ticketchats/?ticketId/${ticketId}`
@@ -41,15 +42,16 @@ useEffect(() => {
   }
   fetchData();
 },[]);
+useEffect(() => {
+  if (sender === getTicket.StaffName) {
+    setReceiver(getTicket.Username);
+  } else {
+    setReceiver(getTicket.StaffName);
+  }
+}, [getTicket, sender]);
 
   async function SendChat() {
-    if (sender === getTicket.StaffName) {
-      console.log(getTicket.StaffName);
-      setReceiver(getTicket.Username);
-    } else {
-      setReceiver(getTicket.StaffName);
-      console.log(getTicket.StaffName + "this is if the sender != staffname" + sender);
-    }
+   
     //wait for getticket to be updated
     if(getTicket.Id !== null){
       console.log("this is the ticketId " + getTicket.Id)
@@ -78,21 +80,20 @@ useEffect(() => {
       setGetChat([...getChat, newMessage]);
       setChatMessages([...chatMessages, newMessage.Comment]);
       setComment("");
-    }
-    
+     
+    }  
   }
   return (
-    <div>
-      <h1>CHAT</h1>
-      <p>{props.Username === null ? "empty" : props.Username}</p>
-      <p>{props.comment}</p>
+    <div className="chat">
+   
+    <div className="chat-messages">
+    <button className="close" onClick={onClose}>X</button>
       {Array.isArray(getChat) && getChat.map((x) => (
         <div key={x.Id}>
-          <span>{x.Sender}</span>
-          <span>{x.Comment}</span>
+          <h4>{x.Sender}  :  {x.Comment}</h4>    
         </div>
       ))}
-      <p>{getTicket.Id}</p>
+      <div className="chat-sender">
       <input
         type="text"
         value={comment}
@@ -101,6 +102,9 @@ useEffect(() => {
         onChange={(e) => setComment(e.target.value)}
       />
       <button onClick={SendChat}>Send</button>
+      </div>
+    </div>
+
     </div>
   );
 }

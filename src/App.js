@@ -13,6 +13,7 @@ import Staff from './Admin/Staff';
 // ============================================STAFF
 import StaffPanel from './Staff/StaffPanel';
 import Chat from './Staff/Chat';
+import StaffTicket from './Staff/Tickets';
 // ============================================USER
 import UserTickets from './User/Tickets';
 import { useEffect } from 'react';
@@ -28,6 +29,8 @@ return (
         <Route path='/registerStaff' element={<Register userLevel = "staffs" />}/>
         <Route path='/login' element={<Login userLevel = "users"/>}/>
         <Route path='/register' element={<Register userLevel = "users" />}/>
+        <Route path='/logins' element={<Navbar/>}/>
+        
         <Route path='/form' element={<Form/>}/>
         {/* ============================================================================= */}
         <Route path='/settings' element={<Settings/>}/>
@@ -37,6 +40,8 @@ return (
 
         {/* ============================================================================== */}
         <Route path='/staffpanel' element={<StaffPanel/>}/>
+        <Route path='/staffTickets' element={<StaffTicket/>}/>
+
         <Route path='/chat' element={<Chat/>}/>
         <Route path='/userTicket' element={<UserTickets/>}/>
       </Routes>

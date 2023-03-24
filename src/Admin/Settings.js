@@ -12,8 +12,6 @@ function Admin(){
             <Priorities/>
             <Status/>
             <Department/>
-
-                
             </div>
             </div>
         </div>)

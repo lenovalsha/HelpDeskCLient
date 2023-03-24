@@ -7,9 +7,6 @@ function Form() {
   const [category, setCategory] = useState();
   const [Title, setTitle] = useState();
   const [Description, setDescription] = useState();
-  // const [statusList, setStatusList] = useState([]);
-  // const [userList, setUserList] = useState([]);
-
   let username = sessionStorage.getItem("username");
   const dateString = "2023-03-15T23:59:07.348Z";
   const date = new Date(dateString);
