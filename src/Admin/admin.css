@@ -1,0 +1,35 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+
+}
+.top-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color:#085b91 ;
+    text-align: center;
+}
+nav{
+    text-align: center;
+    height: 80px;
+    width: 400px;
+}
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  
+}
+nav ul li {
+    line-height: 80px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0;
+}
+nav ul li a{
+    text-decoration: none;
+    border-bottom: none;
+    font-size: 20px;
+    color: black;
+}
