@@ -3,16 +3,33 @@
     color: black;
 
 }
+body{
+    width: 75%;
+    margin: 0 auto;
+    background-color: #1d72aa;
+}
+.container{
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    border-radius:20px;
+}
 .top-container{
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 95%;
+    height: 200px;
     background-color:#085b91 ;
     text-align: center;
+    border-radius:20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    top:20px
 }
 nav{
     text-align: center;
-    height: 80px;
+    height: 200px;
     width: 400px;
 }
 nav ul{
@@ -21,8 +38,8 @@ nav ul{
     list-style: none;
   
 }
-nav ul li {
-    line-height: 80px;
+nav ul li, h1 {
+    line-height: 200px;
     vertical-align: middle;
     text-align: center;
     margin: 0;
@@ -33,3 +50,53 @@ nav ul li a{
     font-size: 20px;
     color: black;
 }
+/* ticket inputs */
+.flex{
+    display: flex;
+ 
+    justify-content: center;
+}
+.flexWrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexWrap > div{
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+}
+section{
+    background-color:#1d72aa;
+    width: 50%;
+    position: relative;
+    top: 100px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+section h1{
+    position: relative;
+    top: -60px;
+}
+/* this is for the labels */
+.columnName{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    text-align: center;
+}
+/* this is for the container of all of the ticket values */
+.values{ 
+    margin-top:20px;
+}
+input{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    text-align: center;
+}
+
+.no-outline:focus {
+    outline: none;
+  }

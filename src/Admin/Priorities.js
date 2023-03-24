@@ -24,11 +24,13 @@ function Priorities(){
     }
     return(
     <div>
+    <section>
         <h1>Priority</h1>
         <input type="text" value={priority} onChange={(e) => setPriority(e.target.value) } placeholder="Name"/>
         <input type="text" value={Color} onChange={(e) => setColor(e.target.value) } placeholder="Color"/>
 
         <button onClick={MakePriority}>Add Priority</button> 
+    </section>
     </div>)
 }
 

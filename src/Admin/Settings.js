@@ -5,12 +5,17 @@ import Department from "./Department";
 import Navbar from "./Navbar";
 function Admin(){
         return(<div>
-            <h1>Admin Page</h1>
+            <div className="container">
             <Navbar/>
+            <div className="flexWrap">
             <Category/>
             <Priorities/>
             <Status/>
             <Department/>
+
+                
+            </div>
+            </div>
         </div>)
 }
 

@@ -39,6 +39,8 @@ function Category(){
           result = await result.json();
     }
     return(<div>
+    <section>
+
     <h1>Category</h1>
         <input value={category} onChange={(e) => setCategory(e.target.value)} />
         
@@ -55,6 +57,7 @@ function Category(){
         <button onClick={AddCategory}>Add Category</button>
 
         </div>
+    </section>
     </div>)
 }
 export default Category;

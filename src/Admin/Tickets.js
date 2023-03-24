@@ -61,11 +61,23 @@ function Tickets() {
           }
 
   return (
-    <div>
+    <div className="container">
     <Navbar/>
-      <h1>Tickes</h1>
+      <h1>Tickets</h1>
+   
+   <div className="flex">
+    <div>
+
+      <input className="columnName" type="text" value="User" readOnly />
+      <input className="columnName" type="text" value="Assigned to" readOnly />
+      <input className="columnName" type="text" value="Subject" readOnly />
+      <input className="columnName" type="text" value="Comment" readOnly />
+      <input className="columnName" type="text" value="Status" readOnly />
+      <input className="columnName" type="text" value="Category" readOnly />
+      <input className="columnName" type="text" value="Assign" readOnly />
+
       {ticketList.map((x) => (
-        <div>
+        <div className="values">
           <input type="text" text={x.Name} value={x.Username} readOnly />
           <input
             type="text"
@@ -76,19 +88,7 @@ function Tickets() {
           <input type="text" value={x.Content} readOnly />
           <input type="text" value={x.StatusName} readOnly />
           <input type="text" value={x.CategoryName} readOnly />
-          <input
-            type="text"
-            value={
-              x.StatusName === "Pending"
-                ? "white"
-                : "In Progress"
-                ? "yellow"
-                : "Closed"
-                ? "green"
-                : "red"
-            } //color here
-            readOnly
-          />
+          
           <select onChange={(e)=> setStaff(e.target.value) }>
         {
             staffList.map(prio =>(
@@ -99,6 +99,8 @@ function Tickets() {
           <button onClick={()=>assignStaff(x)}>Change</button>
         </div>
       ))}
+      </div>
+   </div>
     </div>
   );
 }

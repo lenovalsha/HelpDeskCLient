@@ -59,8 +59,10 @@ async function changeDepartment(staffData){
           
         }          
   return (
-    <div>
+    <div className="container">
     <Navbar/>
+    <div className="flex">
+      <div>
     <h1>Staff List</h1>
       {staffList.map((x) => (<div>
         <input
@@ -83,6 +85,8 @@ async function changeDepartment(staffData){
         <button onClick={()=>changeDepartment(x)}>Change</button>
         </div>
       ))}
+      </div>
+    </div>
     </div>
   );
 }
