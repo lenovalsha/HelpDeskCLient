@@ -97,7 +97,7 @@ useEffect(() => {
         type="text"
         value={comment}
         className="form-control"
-        placeholder="Chat"
+        placeholder="Message"
         onChange={(e) => setComment(e.target.value)}
       />
       <button onClick={SendChat}>Send</button>

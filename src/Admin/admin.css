@@ -11,24 +11,24 @@ h1{
     font-size: 50px;
 }
 .container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.133);
   width: 100%;
   height: 90vh;
   border-radius: 20px;
   overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
 }
 .top-container {
   display: flex;
   justify-content: space-between;
-  width: 95%;
+  width: 100%;
   height: 200px;
   background-color: #085b91;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 0 auto;
-  margin-top: 20px;
   position: relative;
-  top: 20px;
 }
 nav {
   text-align: center;
@@ -47,17 +47,22 @@ h1 {
   text-align: center;
   margin: 0;
 }
-
+.top-container h1{
+  position: relative;
+  left: 40px;
+}
 nav ul li a {
   text-decoration: none;
   border-bottom: none;
   font-size: 20px;
   color: black;
+ 
 }
 
 
 a:hover {
   cursor: pointer;
+  text-decoration:underline;
 }
 /* ticket inputs */
 .flex {
@@ -86,6 +91,10 @@ section h1 {
   position: relative;
   top: -60px;
 }
+h1{
+  color: white;
+  font-weight: 200;
+}
 .last-container {
   position: relative;
   top: -100px;
@@ -98,14 +107,20 @@ option,
 button {
   font-size: 20px;
 }
-
+.flex input{
+  height: 30px;
+  background-color: #085b91;
+  color: white;
+}
 /* this is for the labels */
-.columnName {
+.flex .columnName {
+  background-color: black;
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
   border-bottom-style: groove;
   text-align: center;
+  color: white;
 }
 .columnName:hover {
   cursor: auto;
@@ -125,6 +140,19 @@ input {
 .no-outline:focus {
   outline: none;
 }
+.flex button{
+  color: white;
+  background-color: #085b91;
+  height: 35px;
+
+}
+.flex select{
+  color: white;
+  background-color: #085b91;
+  height: 38px;
+
+}
+
 
 /* ===========================================================================CHAT */
 
@@ -161,8 +189,43 @@ input {
 }
 .chat-sender input {
   width: 200px;
+  text-align: left;
 }
 h4{
     position: relative;
     left: 10px;
+}
+.dashboard-h1{
+  color: white;
+  font-weight: 100;
+}
+.chart{
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    text-align: center;
+    color: black;
+}
+.chart label{
+    position: relative;
+    top: 150px;
+    display: block;
+    text-align: left;
+}
+.pending{
+    background-color: gray;
+
+}
+.in-progress{
+    background-color: yellow;
+
+}
+.complete{
+    background-color: green;
+}
+.charts{
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 auto;
 }

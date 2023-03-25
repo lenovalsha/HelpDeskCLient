@@ -10,6 +10,7 @@ function Login(props) {
     sessionStorage.clear(); //clear our storage so we cant access the form after logging out
   });
   async function login() {
+    const hashedPassword =await hashPassword(password);
     //queuering
     fetch(`https://localhost:7057/api/${props.userLevel}/` + name)
       .then((res) => {
@@ -22,7 +23,7 @@ function Login(props) {
         } //we found a data that has the user name
         else {
           //now see if password matches
-          if (resp.Password === password) {
+          if (resp.Password === hashedPassword) {
             sessionStorage.setItem("username", name);
             if (props.userLevel === "admins") 
             {
@@ -43,12 +44,28 @@ function Login(props) {
         console.log("Login failed " + err.message);
       });
   }
+  async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return hexString(hash);
+  }
+  
+  function hexString(buffer) {
+    const byteArray = new Uint8Array(buffer);
+    const hexCodes = [...byteArray].map(value => {
+      const hexCode = value.toString(16);
+      const paddedHexCode = hexCode.padStart(2, '0');
+      return paddedHexCode;
+    });
+    return hexCodes.join('');
+  }
 
   return (
-    <div className="App">
+    <div className="container">
     <Navbar/>
     <div className="form">   
-      <h1>{props.userLevel}</h1>
+      <h1>{props.userLevel.toUpperCase()}</h1>
       <div>
         <label>Username:</label>
       <input

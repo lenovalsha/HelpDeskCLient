@@ -8,7 +8,9 @@ function Navbar(){
                 <li><Link to="/adminDashboard">Dashboard</Link></li>
                 <li><Link to="/adminTickets">Tickets</Link></li>
                 <li><Link to="/staff">Staff</Link></li>
-                <li><Link to="/settings">Settings</Link></li>
+                <li><Link to="/settings">Manage</Link></li>
+                <li><Link to="/logins">Logout</Link></li>
+
             </ul>
         </nav>
         </div>

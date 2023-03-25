@@ -64,7 +64,7 @@ function Tickets() {
   return (
     <div className="container">
     <Navbar/>
-      <h1>Tickets</h1>
+      <h1 className="title">Tickets</h1>
    
    <div className="flex">
     <div>

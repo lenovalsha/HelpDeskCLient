@@ -1,10 +1,19 @@
 import Navbar from "./Navbar";
-import './admin.css'
-function Dashboard(){
+import "./admin.css";
+import PChart from "./Piechart";
+import BChart from "./BarChart";
 
-    return(<div>
-        <Navbar/>
+function Dashboard() {
+   
+return (
+    <div className="container">
+      <Navbar />
+      <div className="charts">
+      <PChart/>
+      <BChart/>
+      </div>
+      
     </div>
-    )
+  );
 }
 export default Dashboard;

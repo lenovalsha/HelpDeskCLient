@@ -6,9 +6,10 @@ function StaffPanel()
 {
 
     return(
-        <div>Staff
+        <div className="container">
         <Navbar/>
         </div>
+        
     )
 }
 export default StaffPanel;

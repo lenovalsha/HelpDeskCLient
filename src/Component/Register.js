@@ -17,11 +17,13 @@ function Register(props) {
   };
   const formattedDate = date.toLocaleString("en-US", options);
   async function SignUp() {
+    const passwordHash = await hashPassword(password);
+
     let result = await fetch(`https://localhost:7057/api/${props.userLevel}/`, {
       method: "POST",
       body: JSON.stringify({
         name: username,
-        password: password      
+        password: passwordHash      
       }),
       headers: {
         "Content-Type": "application/json",
@@ -31,11 +33,27 @@ function Register(props) {
     result = await result.json();
 
   }
+  async function hashPassword(password) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(password);
+    const hash = await crypto.subtle.digest('SHA-256', data);
+    return hexString(hash);
+  }
+  
+  function hexString(buffer) {
+    const byteArray = new Uint8Array(buffer);
+    const hexCodes = [...byteArray].map(value => {
+      const hexCode = value.toString(16);
+      const paddedHexCode = hexCode.padStart(2, '0');
+      return paddedHexCode;
+    });
+    return hexCodes.join('');
+  }
   return (
-    <div className="App">
+    <div className="container">
       <Navbar/>
       <div className="form">
-      <h1>Register {props.userLevel}</h1>
+      <h1>REGISTER {props.userLevel.toUpperCase()}</h1>
       <div>
       <label>Username:</label>
       <input
