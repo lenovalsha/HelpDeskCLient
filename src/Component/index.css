@@ -5,19 +5,22 @@
 .logins ul{
     display: flex;
     justify-content: space-evenly;
-    background-color:#063b5e;
-    width: 100%;
+    background-color:#141416;
 }
 .App{
     display: block;
 }
+h1{
+    filter: drop-shadow(10px 10px 5px #000);
 
+}
 .form{
     background-color: #063b5e28;
     width: 400px;
     margin: 0 auto;
     margin-top: 50px;
-    border: 5px solid #063b5e;
+    filter: drop-shadow(10px 10px 5px #000);
+
 }
 .form input{
     width: 200px;

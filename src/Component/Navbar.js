@@ -5,6 +5,7 @@ import {useEffect,useState} from 'react'
 function Navbar(){
    
     return(
+        <div className='top-container'>
         <nav className='logins'>
             <ul>
                 <li><Link to="/loginAdmin">Admin Login</Link></li>
@@ -16,6 +17,7 @@ function Navbar(){
             </ul>
            
         </nav>
+        </div>
     )
 }
 export default Navbar;

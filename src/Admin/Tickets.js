@@ -4,11 +4,9 @@ import Navbar from "./Navbar";
 
 function Tickets() {
   const [ticketList, setTicketList] = useState([]); //get a list of all of the tickets
-  const [ticket, setTicket] = useState();
   const [staffList, setStaffList] = useState([]);
   const [staff, setStaff] = useState();
   const [ticketData, setTicketData] = useState({ StaffName: "" }); //get specific data
-
   useEffect(() => {
     const fetchData = async () => {
       const resp = await fetch("https://localhost:7057/api/tickets/");
