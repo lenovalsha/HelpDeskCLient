@@ -7,7 +7,6 @@ import Chat from "./Chat";
 function Tickets() {
   const [ticketList, setTicketList] = useState([]); //get a list of all of the tickets
   const [ticketData, setTicketData] = useState({ StaffName: "" }); //get specific data
-  const [btnClicked, setBtnClicked] = useState(false);
   const [showChat, setShowChat] = useState(false);
 
   let username = sessionStorage.getItem("username"); //username of staff
@@ -32,7 +31,7 @@ function Tickets() {
 
   // ===================================================================================
   async function Work(ticketData, props) {
-    setBtnClicked(true);
+    // setBtnClicked(true);
     const updatedTicket = { ...ticketData, statusName: props };
     setTicketData(updatedTicket);
 
@@ -53,29 +52,20 @@ function Tickets() {
     } catch (error) {
       console.error(error);
     }
-    // window.location.reload(true);
   }
 
   async function GetChat(props)
   {
-    // setSelectedTicket(ticket);
     sessionStorage.setItem("ticketId", props.Id);
     setShowChat(true)
   }
   return (
-    <div className="container">
+    <div className="application">
     <Navbar/>
+    <div className="container">
       <h1>Tickets</h1>
-   
    <div className="flex">
     <div>
-
-      <input className="columnName" type="text" value="User" readOnly />
-      <input className="columnName" type="text" value="Assigned to" readOnly />
-      <input className="columnName" type="text" value="Subject" readOnly />
-      <input className="columnName" type="text" value="Comment" readOnly />
-      <input className="columnName" type="text" value="Category" readOnly />
-      <input className="columnName" type="text" value="Status" readOnly />
       {ticketList.map((x) => (
         <div>
           <input type="text" text={x.Name} value={x.Username} readOnly />
@@ -89,7 +79,7 @@ function Tickets() {
           <input type="text" value={x.CategoryName} readOnly />
           <input type="text" value={x.StatusName} readOnly />
 
-          <button disabled={btnClicked} onClick={() => Work(x, "In-Progress")}>Work</button>
+          <button onClick={() => Work(x, "In-Progress")}>Work</button>
           <button onClick={() => Work(x, "Completed")} disabled={false}>
             Complete
           </button>
@@ -108,7 +98,7 @@ function Tickets() {
       {showChat && (
         <Chat onClose={()=>{setShowChat(false)}}/>
       )}
-      {/* =================================================================================== */}
+    </div>
     </div>
   );
 }

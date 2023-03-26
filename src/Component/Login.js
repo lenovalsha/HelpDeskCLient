@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login(props) {
   const [name, setName] = useState("");
@@ -9,6 +11,30 @@ function Login(props) {
   useEffect(() => {
     sessionStorage.clear(); //clear our storage so we cant access the form after logging out
   });
+  const notifyError =()=>{
+    toast.error('Login failed', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
+  const notifySuccess =()=>{
+    toast.success('Login Success', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+  }
   async function login() {
     const hashedPassword =await hashPassword(password);
     //queuering
@@ -36,12 +62,13 @@ function Login(props) {
               navigate("/form");
             }
           } else {
-            console.log("Login Failed");
+            notifyError();
           }
         }
       })
       .catch((err) => {
         console.log("Login failed " + err.message);
+        notifyError();
       });
   }
   async function hashPassword(password) {
@@ -62,8 +89,10 @@ function Login(props) {
   }
 
   return (
-    <div className="container">
+    <div>
     <Navbar/>
+
+    <div className="container">
     <div className="form">   
       <h1>{props.userLevel.toUpperCase()}</h1>
       <div>
@@ -85,6 +114,8 @@ function Login(props) {
       />
       </div>
       <button onClick={login}>Login</button>
+    </div>
+    <ToastContainer/>
     </div>
     </div>
   );

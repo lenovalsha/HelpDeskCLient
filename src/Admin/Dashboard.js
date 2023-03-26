@@ -4,15 +4,15 @@ import PChart from "./Piechart";
 import BChart from "./BarChart";
 
 function Dashboard() {
-   
-return (
-    <div className="container">
+  return (
+    <div className="application">
       <Navbar />
-      <div className="charts">
-      <PChart/>
-      <BChart/>
+      <div className="container">
+        <div className="charts">
+          <PChart />
+          <BChart />
+        </div>
       </div>
-      
     </div>
   );
 }

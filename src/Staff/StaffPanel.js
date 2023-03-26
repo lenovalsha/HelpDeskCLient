@@ -6,8 +6,10 @@ function StaffPanel()
 {
 
     return(
-        <div className="container">
+        <div className="application">
         <Navbar/>
+        <div className="container">
+        </div>
         </div>
         
     )

@@ -77,10 +77,9 @@ const data = [
           <Legend />
           <Bar dataKey="Access" fill="#8884d8" />
           <Bar dataKey="Asset" fill="#82ca9d" />
-          <Bar dataKey="Feedback" fill="#82ca9d" />
-          <Bar dataKey="General" fill="#82ca9d" />
-          <Bar dataKey="Network" fill="#82ca9d" />
-
+          <Bar dataKey="Feedback" fill="#ffce30" />
+          <Bar dataKey="General" fill="#746a80" />
+          <Bar dataKey="Network" fill="#e83845" />
         </BarChart>
       </div>
         </div>

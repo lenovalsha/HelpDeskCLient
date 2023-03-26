@@ -4,9 +4,10 @@ import Status from "./Status";
 import Department from "./Department";
 import Navbar from "./Navbar";
 function Admin(){
-        return(<div>
-            <div className="container">
+        return(<div className="application">
+        
             <Navbar/>
+            <div className="container">
             <div className="flexWrap">
             <Category/>
             <Priorities/>

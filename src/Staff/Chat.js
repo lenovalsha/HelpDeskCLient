@@ -19,7 +19,7 @@ const contentRef = useRef(null);
     const interval = setInterval(() => {
     const fetchData = async () => {
       const resp = await fetch(
-        `https://localhost:7057/api/ticketchats/?ticketId/${ticketId}`
+        `https://localhost:7057/api/ticketchats/ticketId/${ticketId}`
       );
     console.log(resp);
 
@@ -31,6 +31,7 @@ const contentRef = useRef(null);
   },3000);
   return()=> clearInterval(interval);
 }, []);
+console.log(ticketId)
 useEffect(() => {
   const fetchData = async() => {
     const resp = await fetch(`https://localhost:7057/api/tickets/${ticketId}`);
@@ -87,9 +88,9 @@ useEffect(() => {
    
     <div className="chat-messages" ref={contentRef}>
     <button className="close" onClick={onClose}>X</button>
-      {Array.isArray(getChat) && getChat.map((x) => (
+      {Array.isArray(getChat)&&getChat.sort((a ,b) => b.Id - a.Id) && getChat.map((x) => (
         <div key={x.Id}>
-          <h4>{x.Sender}  :  {x.Comment}</h4>    
+          <h5>{x.Sender}  :  {x.Comment}</h5>    
         </div>
       ))}
       <div className="chat-sender">

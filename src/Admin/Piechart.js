@@ -51,7 +51,7 @@ useEffect(()=>{
         {
             acc.pending++;
         }
-       else if(ticket.StatusName === "In-progress")
+       else if(ticket.StatusName === "In-Progress")
         {
          acc.inProgress++;
 

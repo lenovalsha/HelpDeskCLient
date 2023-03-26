@@ -46,7 +46,8 @@ function Form() {
   }
 
   return (
-    <div>
+    <div className="application">
+    <div className="container">
     <Navbar/>
       <div className="requestForm">
       <h1> Request Form</h1>
@@ -95,6 +96,7 @@ function Form() {
       </div>
       <button onClick={GenerateTicket}>Submit</button>
       </div>
+    </div>
     </div>
   );
 }

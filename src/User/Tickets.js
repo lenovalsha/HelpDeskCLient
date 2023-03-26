@@ -63,6 +63,7 @@ function Tickets() {
     setShowChat(true)
   }
   return (
+    <div className="application">
     <div className="container">
     <Navbar/>
       <h1>Tickets</h1>
@@ -102,6 +103,7 @@ function Tickets() {
         <Chat onClose={()=>{setShowChat(false)}}/>
       )}
       {/* =================================================================================== */}
+    </div>
     </div>
   );
 }

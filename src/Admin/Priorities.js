@@ -32,7 +32,6 @@ function Priorities(){
         <input type="text" value={priority} onChange={(e) => setPriority(e.target.value) } placeholder="Name"/>
         <select onChange={(e)=> setColor(e.target.value) }>
         {
-            //loop through the list and add it as option
             colors.map(prio =>(
             <option value={prio} key={prio}>{prio}</option>   
             ))

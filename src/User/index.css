@@ -25,9 +25,13 @@
     width: 410px;
 }
 .requestForm button{
-    margin-top: 20px;
+    margin-top: 10px;
     background-color:#063b5e ;
     border-radius:25px ;
     color: white;
     width: 300px;
+}
+.requestForm h1{
+    color: black;
+    margin-bottom: -30px;
 }

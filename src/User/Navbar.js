@@ -7,7 +7,6 @@ function Navbar(){
         <h1>Company</h1>
         <nav>
             <ul>
-                <li><Link to="/">Dashboard</Link></li>
                 <li><Link to="/userTicket">My Tickets</Link></li>
                 <li><Link to="/form">Request Form</Link></li>
                 <li><Logout/></li>

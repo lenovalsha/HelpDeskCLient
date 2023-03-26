@@ -59,8 +59,10 @@ async function changeDepartment(staffData){
           
         }          
   return (
-    <div className="container">
+    <div className="application"> 
+    
     <Navbar/>
+    <div className="container">
     <div className="flex">
       <div>
     <h1>Staff List</h1>
@@ -86,6 +88,7 @@ async function changeDepartment(staffData){
         </div>
       ))}
       </div>
+    </div>
     </div>
     </div>
   );
