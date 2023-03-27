@@ -16,7 +16,7 @@ function Tickets() {
     const interval = setInterval(() => {
     const fetchData = async () => {
       const resp = await fetch(
-        `https://localhost:7057/api/tickets/username/${username}`
+        `https://localhost7057/api/tickets/username/${username}`
       );
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
@@ -37,7 +37,7 @@ function Tickets() {
     setTicketData(updatedTicket);
 
     const resp = await fetch(
-      `https://localhost:7057/api/tickets/${ticketData.Id}`,
+      `https://localhost7057/api/tickets/${ticketData.Id}`,
       {
         method: "PUT",
         headers: {
@@ -58,14 +58,13 @@ function Tickets() {
 
   async function GetChat(props)
   {
-    // setSelectedTicket(ticket);
     sessionStorage.setItem("ticketId", props.Id);
     setShowChat(true)
   }
   return (
     <div className="application">
-    <div className="container">
     <Navbar/>
+    <div className="container">
       <h1>Tickets</h1>
    
    <div className="flex">

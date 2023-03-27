@@ -38,7 +38,7 @@ function Login(props) {
   async function login() {
     const hashedPassword =await hashPassword(password);
     //queuering
-    fetch(`https://localhost:7057/api/${props.userLevel}/` + name)
+    fetch(`https://localhost7057/api/${props.userLevel}/` + name)
       .then((res) => {
         return res.json();
       })

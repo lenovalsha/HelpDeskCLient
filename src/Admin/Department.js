@@ -3,7 +3,7 @@ import { useState } from "react"
 function Department(){
     const [Department,setDepartment] = useState('');
    async function MakeDepartment(){
-        let result = await fetch("https://localhost:7057/api/Departments/", {
+        let result = await fetch("https://localhost7057/api/Departments/", {
       method: "POST",
       body: JSON.stringify({
         name: Department

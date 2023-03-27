@@ -11,7 +11,7 @@ function Register(props) {
     notify();
     const passwordHash = await hashPassword(password);
 
-    let result = await fetch(`https://localhost:7057/api/${props.userLevel}/`, {
+    let result = await fetch(`https://localhost7057/api/${props.userLevel}/`, {
       method: "POST",
       body: JSON.stringify({
         name: username,

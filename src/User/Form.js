@@ -13,7 +13,7 @@ function Form() {
   useEffect(() => {
     //get the priority list data
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/Categories/");
+      const resp = await fetch("https://localhost7057/api/Categories/");
       const newData = await resp.json();
       setCategoryList(newData);
     };
@@ -27,7 +27,7 @@ function Form() {
   }, []);
 
   async function GenerateTicket() {
-    let result = await fetch("https://localhost:7057/api/tickets/", {
+    let result = await fetch("https://localhost7057/api/tickets/", {
       method: "POST",
       body: JSON.stringify({
         title: Title,
@@ -47,8 +47,8 @@ function Form() {
 
   return (
     <div className="application">
-    <div className="container">
     <Navbar/>
+    <div className="container">
       <div className="requestForm">
       <h1> Request Form</h1>
       <div>

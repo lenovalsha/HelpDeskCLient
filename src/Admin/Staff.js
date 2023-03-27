@@ -11,7 +11,7 @@ function Staff() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/staffs/");
+      const resp = await fetch("https://localhost7057/api/staffs/");
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
       }
@@ -23,7 +23,7 @@ function Staff() {
   }, []);
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/departments/");
+      const resp = await fetch("https://localhost7057/api/departments/");
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
       }
@@ -38,7 +38,7 @@ async function changeDepartment(staffData){
         const updatedStaff = { ...staffData, departmentName: department};
         setStaffData(updatedStaff);
         const resp = await fetch(
-            `https://localhost:7057/api/staffs/${staffData.Name}`,
+            `https://localhost7057/api/staffs/${staffData.Name}`,
             {
               method: "PUT",
               

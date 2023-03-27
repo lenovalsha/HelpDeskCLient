@@ -9,7 +9,7 @@ function Tickets() {
   const [ticketData, setTicketData] = useState({ StaffName: "" }); //get specific data
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/tickets/");
+      const resp = await fetch("https://localhost7057/api/tickets/");
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
       }
@@ -22,7 +22,7 @@ function Tickets() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/staffs/");
+      const resp = await fetch("https://localhost7057/api/staffs/");
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
       }
@@ -37,7 +37,7 @@ function Tickets() {
     const updatedTicket = { ...ticketData, StaffName: staff };
     setTicketData(updatedTicket);
     const resp = await fetch(
-      `https://localhost:7057/api/tickets/${ticketData.Id}`,
+      `https://localhost7057/api/tickets/${ticketData.Id}`,
       {
         method: "PUT",
         headers: {

@@ -15,7 +15,7 @@ function Tickets() {
     const interval = setInterval(() => {
     const fetchData = async () => {
       const resp = await fetch(
-        `https://localhost:7057/api/tickets/staffname/${username}`
+        `https://localhost7057/api/tickets/staffname/${username}`
       );
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
@@ -36,7 +36,7 @@ function Tickets() {
     setTicketData(updatedTicket);
 
     const resp = await fetch(
-      `https://localhost:7057/api/tickets/${ticketData.Id}`,
+      `https://localhost7057/api/tickets/${ticketData.Id}`,
       {
         method: "PUT",
         headers: {

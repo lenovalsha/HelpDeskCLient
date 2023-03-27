@@ -8,7 +8,7 @@ function Category() {
   useEffect(() => {
     //get the priority list data
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/priorities/");
+      const resp = await fetch("https://localhost7057/api/priorities/");
       const newData = await resp.json();
       setPriorityList(newData); //save the list of newDate to the list
       console.log(newData);
@@ -23,7 +23,7 @@ function Category() {
       console.error(`Priority with name ${priorityname} not found.`);
       return;
     }
-    let result = await fetch("https://localhost:7057/api/categories/", {
+    let result = await fetch("https://localhost7057/api/categories/", {
       method: "POST",
       body: JSON.stringify({
         name: category,

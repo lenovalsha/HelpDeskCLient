@@ -23,7 +23,7 @@ function BChart() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const resp = await fetch("https://localhost:7057/api/tickets/");
+      const resp = await fetch("https://localhost7057/api/tickets/");
       if (!resp.ok) {
         throw new Error(`HTTP error! status: ${resp.status}`);
       }

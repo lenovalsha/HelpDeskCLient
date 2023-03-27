@@ -38,7 +38,7 @@ const onImageChange = (event) => {
       setStaffData(updatedStaff);
 
       // Send updated staff data to server
-      const resp = await fetch(`https://localhost:7057/api/staffs/${staffName}`, {
+      const resp = await fetch(`https://localhost7057/api/staffs/${staffName}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const onImageChange = (event) => {
   };
   useEffect(() => {
     async function fetchStaffData() {
-      const resp = await fetch(`https://localhost:7057/api/staffs/${staffName}`);
+      const resp = await fetch(`https://localhost7057/api/staffs/${staffName}`);
       const data = await resp.json();
       setStaffData(data);
     }

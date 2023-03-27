@@ -19,7 +19,7 @@ const contentRef = useRef(null);
     const interval = setInterval(() => {
     const fetchData = async () => {
       const resp = await fetch(
-        `https://localhost:7057/api/ticketchats/ticketId/${ticketId}`
+        `https://localhost7057/api/ticketchats/ticketId/${ticketId}`
       );
     console.log(resp);
 
@@ -34,7 +34,7 @@ const contentRef = useRef(null);
 console.log(ticketId)
 useEffect(() => {
   const fetchData = async() => {
-    const resp = await fetch(`https://localhost:7057/api/tickets/${ticketId}`);
+    const resp = await fetch(`https://localhost7057/api/tickets/${ticketId}`);
     console.log(resp);
     const newData = await resp.json();
     setGetTicket(newData); //save the list of newDate to the list
@@ -55,7 +55,7 @@ useEffect(() => {
     //wait for getticket to be updated
     if(getTicket.Id !== null){
       console.log("this is the ticketId " + getTicket.Id)
-      let result = await fetch("https://localhost:7057/api/ticketchats/", {
+      let result = await fetch("https://localhost7057/api/ticketchats/", {
         method: "POST",
         body: JSON.stringify({
           TicketId: getTicket.Id,

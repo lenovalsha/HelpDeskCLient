@@ -8,7 +8,7 @@ function Priorities(){
 
 
    async function MakePriority(){
-        let result = await fetch("https://localhost:7057/api/priorities/", {
+        let result = await fetch("https://localhost7057/api/priorities/", {
       method: "POST",
       body: JSON.stringify({
         name: priority,

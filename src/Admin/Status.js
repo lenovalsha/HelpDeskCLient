@@ -6,7 +6,7 @@ function Status(){
     const colors = ['yellow','red','orange','green','blue','purple','pink',]
 
    async function MakePriority(){
-        let result = await fetch("https://localhost:7057/api/status/", {
+        let result = await fetch("https://localhost7057/api/status/", {
       method: "POST",
       body: JSON.stringify({
         name: status,
