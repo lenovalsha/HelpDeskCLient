@@ -94,7 +94,7 @@ a:hover {
 
 }
 section {
-  background-color: #1d72aa;
+  background-color: #141416;
   width: 75%;
   position: relative;
   top: 100px;
@@ -123,7 +123,7 @@ button {
 }
 .flex input{
   height: 30px;
-  background-color: #085b91;
+  background-color: #141416;
   color: white;
 }
 /* this is for the labels */
@@ -156,13 +156,13 @@ input {
 }
 .flex button{
   color: white;
-  background-color: #085b91;
+  background-color: #141416;
   height: 35px;
 
 }
 .flex select{
   color: white;
-  background-color: #085b91;
+  background-color: #141416;
   height: 38px;
 
 }
@@ -172,15 +172,16 @@ input {
 
 .chat-messages {
   border-radius: 10px 10px 0px 0px;
+  
   bottom: 30px;
-  right: 20px;
+  right: 0px;
   position: fixed;
   height: 400px;
   width: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #fff;
-  border: 2px solid #085b91;
+  border: 2px solid #141416;
   display: flex;
   flex-direction: column-reverse;
 
@@ -192,7 +193,7 @@ input {
 .chat .close{
     background-color: black;
     position: fixed;
-    right: 10px;
+    right: 0px;
     bottom: 420px;
     z-index: 1;
     color: white;
@@ -200,12 +201,12 @@ input {
 .chat-sender {
   position: fixed;
   bottom: 0px;
-  right: 20px;
+  right: 0px;
   width: 300px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
-  border: 2px solid #085b91;
+  border: 2px solid #141416;
 
 }
 .chat-sender input {
@@ -220,6 +221,7 @@ h4{
   color: white;
   font-weight: 100;
 }
+/* ======================================================================BARS */
 .chart{
     display: flex;
     justify-content: space-between;
